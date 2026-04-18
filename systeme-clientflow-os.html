@@ -1,0 +1,690 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+<style>
+  .cfo-wrap,
+  .cfo-wrap * {
+    box-sizing: border-box;
+  }
+
+  .cfo-wrap {
+    font-family: 'Inter', system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+    color: #1e293b;
+    background: #f6f8fb;
+    line-height: 1.55;
+  }
+
+  .cfo-container {
+    width: 100%;
+    max-width: 1120px;
+    margin: 0 auto;
+    padding: 0 18px;
+  }
+
+  .cfo-section {
+    padding: 68px 0;
+  }
+
+  .cfo-card {
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 18px;
+    box-shadow: 0 14px 35px rgba(15, 23, 42, 0.06);
+  }
+
+  .cfo-kicker {
+    display: inline-block;
+    background: #dcfce7;
+    color: #065f46;
+    font-weight: 700;
+    border-radius: 999px;
+    padding: 8px 14px;
+    font-size: 12px;
+    letter-spacing: 0.02em;
+    margin-bottom: 14px;
+  }
+
+  .cfo-h1 {
+    font-size: clamp(32px, 5vw, 62px);
+    line-height: 1.05;
+    margin: 0;
+    color: #0f172a;
+    font-weight: 900;
+    letter-spacing: -0.03em;
+  }
+
+  .cfo-h2 {
+    font-size: clamp(28px, 3.8vw, 46px);
+    line-height: 1.1;
+    margin: 0;
+    color: #0f172a;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  .cfo-h3 {
+    margin: 0;
+    font-size: 22px;
+    line-height: 1.25;
+    color: #0f172a;
+    font-weight: 700;
+  }
+
+  .cfo-lead {
+    font-size: clamp(18px, 2vw, 23px);
+    margin: 18px 0 0;
+    color: #334155;
+    max-width: 840px;
+  }
+
+  .cfo-p {
+    margin: 0;
+    color: #334155;
+    font-size: 18px;
+  }
+
+  .cfo-price-wrap {
+    display: flex;
+    align-items: flex-end;
+    gap: 18px;
+    margin-top: 28px;
+    flex-wrap: wrap;
+  }
+
+  .cfo-price-main {
+    font-size: clamp(40px, 6vw, 56px);
+    line-height: 1;
+    color: #0f172a;
+    font-weight: 900;
+    margin: 0;
+  }
+
+  .cfo-price-note {
+    font-size: 18px;
+    color: #64748b;
+    text-decoration: line-through;
+    margin: 0;
+  }
+
+  .cfo-cta-row {
+    margin-top: 28px;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+  }
+
+  .cfo-btn {
+    display: inline-block;
+    border: 0;
+    border-radius: 999px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+    padding: 14px 26px;
+    transition: transform .15s ease, box-shadow .2s ease, opacity .2s ease;
+  }
+
+  .cfo-btn:hover {
+    transform: translateY(-1px);
+  }
+
+  .cfo-btn-primary {
+    background: #0f172a;
+    color: #fff;
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.24);
+  }
+
+  .cfo-btn-primary:hover {
+    opacity: .95;
+  }
+
+  .cfo-btn-ghost {
+    background: #dcfce7;
+    color: #0f172a;
+  }
+
+  .cfo-friction {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #64748b;
+  }
+
+  .cfo-grid-2,
+  .cfo-grid-3 {
+    display: grid;
+    gap: 16px;
+    margin-top: 24px;
+  }
+
+  .cfo-grid-2 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .cfo-grid-3 {
+    grid-template-columns: repeat(1, minmax(0, 1fr));
+  }
+
+  .cfo-chip {
+    border-radius: 999px;
+    border: 1px solid #86efac;
+    background: #f0fdf4;
+    color: #166534;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 7px 12px;
+  }
+
+  .cfo-list {
+    list-style: none;
+    margin: 20px 0 0;
+    padding: 0;
+  }
+
+  .cfo-list li {
+    display: flex;
+    gap: 10px;
+    margin: 0;
+    padding: 8px 0;
+    font-size: 18px;
+    color: #334155;
+  }
+
+  .cfo-list li:before {
+    content: '•';
+    color: #0f172a;
+    font-weight: 900;
+  }
+
+  .cfo-offer-card {
+    padding: 24px;
+  }
+
+  .cfo-offer-value {
+    margin: 0;
+    font-size: 12px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: .03em;
+    color: #0f766e;
+  }
+
+  .cfo-offer-copy {
+    margin: 10px 0 0;
+    color: #334155;
+    font-size: 16px;
+  }
+
+  .cfo-compare {
+    padding: 24px;
+    border-radius: 18px;
+  }
+
+  .cfo-compare-before {
+    background: #fff1f2;
+    border: 1px solid #fecdd3;
+  }
+
+  .cfo-compare-after {
+    background: #ecfdf5;
+    border: 1px solid #bbf7d0;
+  }
+
+  .cfo-note {
+    margin-top: 14px;
+    padding: 18px;
+    border-radius: 14px;
+    background: #ffffff;
+    border: 1px solid #cbd5e1;
+    font-size: 16px;
+    color: #334155;
+  }
+
+  .cfo-value-wrap {
+    padding: 26px;
+  }
+
+  .cfo-value-line {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #e2e8f0;
+    padding: 10px 0;
+    font-size: 18px;
+  }
+
+  .cfo-faq-item {
+    margin-top: 12px;
+    border-radius: 14px;
+    background: #ffffff;
+    border: 1px solid #e2e8f0;
+    overflow: hidden;
+  }
+
+  .cfo-faq-q {
+    width: 100%;
+    border: 0;
+    background: transparent;
+    padding: 16px 18px;
+    text-align: left;
+    font-size: 17px;
+    font-weight: 700;
+    color: #0f172a;
+    cursor: pointer;
+  }
+
+  .cfo-faq-a {
+    display: none;
+    padding: 0 18px 16px;
+    color: #334155;
+    font-size: 16px;
+  }
+
+  .cfo-faq-item.cfo-open .cfo-faq-a {
+    display: block;
+  }
+
+  .cfo-dark {
+    background: #0f172a;
+    color: #e2e8f0;
+  }
+
+  .cfo-dark .cfo-h2,
+  .cfo-dark .cfo-p {
+    color: #e2e8f0;
+  }
+
+  .cfo-countdown {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 999px;
+    border: 1px solid #86efac;
+    background: #f0fdf4;
+    color: #14532d;
+    font-size: 13px;
+    font-weight: 700;
+    padding: 8px 12px;
+  }
+
+  .cfo-countdot {
+    width: 8px;
+    height: 8px;
+    border-radius: 999px;
+    background: #16a34a;
+    animation: cfoPulse 1s infinite;
+  }
+
+  @keyframes cfoPulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.4; }
+  }
+
+  .cfo-popup {
+    position: fixed;
+    left: 14px;
+    bottom: 84px;
+    z-index: 80;
+    width: min(290px, calc(100vw - 28px));
+    background: #fff;
+    border: 1px solid #e2e8f0;
+    border-radius: 12px;
+    box-shadow: 0 12px 25px rgba(15, 23, 42, 0.14);
+    padding: 12px;
+    transition: opacity .25s ease, transform .25s ease;
+  }
+
+  .cfo-popup.cfo-hide {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+
+  .cfo-popup-title {
+    margin: 0;
+    font-size: 13px;
+    color: #0f172a;
+    font-weight: 800;
+  }
+
+  .cfo-popup-copy {
+    margin: 4px 0 0;
+    font-size: 14px;
+    color: #475569;
+  }
+
+  .cfo-sticky {
+    position: fixed;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 90;
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(6px);
+    border-top: 1px solid #e2e8f0;
+    padding: 10px 14px;
+  }
+
+  .cfo-sticky .cfo-btn {
+    width: 100%;
+  }
+
+  .cfo-foot {
+    padding: 30px 0 90px;
+    font-size: 14px;
+    color: #64748b;
+  }
+
+  @media (min-width: 640px) {
+    .cfo-grid-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  }
+
+  @media (min-width: 860px) {
+    .cfo-grid-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+    .cfo-popup { bottom: 18px; }
+    .cfo-sticky { display: none; }
+    .cfo-foot { padding-bottom: 34px; }
+  }
+</style>
+<div class="cfo-wrap">
+  <section class="cfo-section" style="background: linear-gradient(180deg, #ffffff 0%, #f6f8fb 100%);">
+    <div class="cfo-container">
+      <span class="cfo-kicker">ClientFlow OS for freelancers and social media managers</span>
+      <h1 class="cfo-h1">Stop running client work from memory, stress, and random chats.</h1>
+      <p class="cfo-lead">ClientFlow OS gives you the systems to onboard better, price properly, report clearly, renew confidently, and stop burning out while still undercharging.</p>
+      <div class="cfo-price-wrap">
+        <p class="cfo-price-main">₦15,000</p>
+        <p class="cfo-price-note">Typical value: ₦55,000+</p>
+      </div>
+      <div class="cfo-cta-row">
+        <a href="#cfo-checkout" class="cfo-btn cfo-btn-primary">Get ClientFlow OS</a>
+        <div class="cfo-countdown" data-cfo-countdown><span class="cfo-countdot"></span><span>Current offer window ends in: <strong>20:00</strong></span></div>
+      </div>
+      <p class="cfo-friction">Instant access. Plug-and-play templates. Use today with active clients.</p>
+    </div>
+  </section>
+
+  <section class="cfo-section" style="background:#fff;">
+    <div class="cfo-container">
+      <h2 class="cfo-h2">Your real problem is not talent. It is client chaos without a backend system.</h2>
+      <div class="cfo-grid-2">
+        <div class="cfo-card cfo-offer-card"><p class="cfo-p">Client requests are scattered across WhatsApp, email, voice notes, and late-night messages.</p></div>
+        <div class="cfo-card cfo-offer-card"><p class="cfo-p">Pricing still feels like guesswork, so every quote comes with anxiety.</p></div>
+        <div class="cfo-card cfo-offer-card"><p class="cfo-p">Reporting week feels like panic because everything is rushed at month end.</p></div>
+        <div class="cfo-card cfo-offer-card"><p class="cfo-p">Scope creep keeps stealing hours you are not paid for.</p></div>
+        <div class="cfo-card cfo-offer-card"><p class="cfo-p">Renewal conversations feel awkward even when results are good.</p></div>
+        <div class="cfo-card cfo-offer-card"><p class="cfo-p">You are overworked, underpaid, and carrying the whole operation in your head.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cfo-section">
+    <div class="cfo-container">
+      <h2 class="cfo-h2">Why most freelancers stay stuck</h2>
+      <div style="margin-top:18px;display:grid;gap:12px;max-width:900px;">
+        <p class="cfo-p">You can be highly skilled and still struggle because your delivery has no operating system behind it.</p>
+        <p class="cfo-p">You keep fixing the same client issues manually each month because no process exists to prevent them.</p>
+        <p class="cfo-p">Growth becomes exhausting because every account depends on your energy, memory, and availability.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cfo-section" style="background:#fff;">
+    <div class="cfo-container">
+      <h2 class="cfo-h2">ClientFlow OS gives your service business structure you can use immediately</h2>
+      <p class="cfo-lead">This is a ready-to-use system, not a theory-heavy course. Open it, plug it into your workflow, and start improving how you onboard, deliver, report, renew, and upsell.</p>
+      <div class="cfo-cta-row">
+        <a href="#cfo-checkout" class="cfo-btn cfo-btn-primary">Get Instant Access</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="cfo-section">
+    <div class="cfo-container">
+      <h2 class="cfo-h2">What you get inside ClientFlow OS</h2>
+      <div class="cfo-grid-3">
+        <article class="cfo-card cfo-offer-card">
+          <p class="cfo-offer-value">Onboarding Flow</p>
+          <h3 class="cfo-h3" style="margin-top:8px;">Clear start. Better boundaries.</h3>
+          <p class="cfo-offer-copy">Start client relationships with structure and clarity so work does not become chaos by week two.</p>
+        </article>
+        <article class="cfo-card cfo-offer-card">
+          <p class="cfo-offer-value">Pricing Calculator</p>
+          <h3 class="cfo-h3" style="margin-top:8px;">Price with confidence.</h3>
+          <p class="cfo-offer-copy">Stop guessing rates. Build pricing that protects your time, margin, and confidence when sending proposals.</p>
+        </article>
+        <article class="cfo-card cfo-offer-card">
+          <p class="cfo-offer-value">Reporting Templates</p>
+          <h3 class="cfo-h3" style="margin-top:8px;">Simple reports clients trust.</h3>
+          <p class="cfo-offer-copy">Make monthly reporting faster for you and easier for clients to understand and act on.</p>
+        </article>
+        <article class="cfo-card cfo-offer-card">
+          <p class="cfo-offer-value">Content Systems</p>
+          <h3 class="cfo-h3" style="margin-top:8px;">Less back and forth.</h3>
+          <p class="cfo-offer-copy">Run content production with more consistency, better approvals, and less communication fatigue.</p>
+        </article>
+        <article class="cfo-card cfo-offer-card">
+          <p class="cfo-offer-value">Renewal Scripts</p>
+          <h3 class="cfo-h3" style="margin-top:8px;">Renew without awkwardness.</h3>
+          <p class="cfo-offer-copy">Handle contract renewals clearly and professionally without sounding desperate or unsure.</p>
+        </article>
+        <article class="cfo-card cfo-offer-card">
+          <p class="cfo-offer-value">Upsell Playbook</p>
+          <h3 class="cfo-h3" style="margin-top:8px;">Grow account value naturally.</h3>
+          <p class="cfo-offer-copy">Spot upsell opportunities that feel helpful to clients while increasing your income per account.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="cfo-section" style="background:#fff;">
+    <div class="cfo-container">
+      <h2 class="cfo-h2">Before and after ClientFlow OS</h2>
+      <div class="cfo-grid-2">
+        <div class="cfo-compare cfo-compare-before">
+          <h3 class="cfo-h3">Before</h3>
+          <ul class="cfo-list">
+            <li>Messy client communication</li>
+            <li>Underpricing and second-guessing</li>
+            <li>Last-minute reporting panic</li>
+            <li>Burnout from doing everything manually</li>
+            <li>Weak renewals and low account growth</li>
+          </ul>
+        </div>
+        <div class="cfo-compare cfo-compare-after">
+          <h3 class="cfo-h3">After</h3>
+          <ul class="cfo-list">
+            <li>Smoother onboarding and clearer boundaries</li>
+            <li>Structured pricing with stronger confidence</li>
+            <li>Simple monthly reporting process</li>
+            <li>Better client experience and retention</li>
+            <li>More structure and less stress week to week</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cfo-section">
+    <div class="cfo-container">
+      <h2 class="cfo-h2">Who this is for</h2>
+      <ul class="cfo-list" style="margin-top:16px;">
+        <li>Freelancers juggling multiple clients</li>
+        <li>Social media managers tired of scattered workflows</li>
+        <li>Service providers who need proper systems behind delivery</li>
+        <li>People who want to charge better and retain clients longer</li>
+        <li>Skilled operators who need backend structure to scale calmly</li>
+      </ul>
+      <div class="cfo-note">
+        <strong>Not for you if:</strong> You want a magic income promise, you refuse to improve your systems, or you do not work with clients.
+      </div>
+    </div>
+  </section>
+
+  <section class="cfo-section" id="cfo-checkout" style="background:#fff;">
+    <div class="cfo-container">
+      <h2 class="cfo-h2">The value stack</h2>
+      <div class="cfo-card cfo-value-wrap" style="margin-top:22px;">
+        <div class="cfo-value-line"><span>Onboarding Flow</span><strong>₦12,000 value</strong></div>
+        <div class="cfo-value-line"><span>Pricing Calculator</span><strong>₦10,000 value</strong></div>
+        <div class="cfo-value-line"><span>Reporting Templates</span><strong>₦8,000 value</strong></div>
+        <div class="cfo-value-line"><span>Content Systems</span><strong>₦9,000 value</strong></div>
+        <div class="cfo-value-line"><span>Renewal Scripts</span><strong>₦7,000 value</strong></div>
+        <div class="cfo-value-line"><span>Upsell Playbook</span><strong>₦9,000 value</strong></div>
+        <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:14px;margin-top:18px;flex-wrap:wrap;">
+          <div>
+            <p style="margin:0;color:#64748b;">Total value</p>
+            <p style="margin:0;color:#64748b;font-size:28px;font-weight:800;text-decoration:line-through;">₦55,000+</p>
+          </div>
+          <div>
+            <p style="margin:0;color:#64748b;">Today</p>
+            <p style="margin:0;color:#0f172a;font-size:42px;line-height:1;font-weight:900;">₦15,000</p>
+          </div>
+        </div>
+        <div class="cfo-cta-row">
+          <a href="#" class="cfo-btn cfo-btn-primary">Buy Now</a>
+          <div class="cfo-countdown" data-cfo-countdown><span class="cfo-countdot"></span><span>Current offer window ends in: <strong>20:00</strong></span></div>
+        </div>
+        <p class="cfo-friction">One payment. Instant digital access. Start using it immediately.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="cfo-section">
+    <div class="cfo-container">
+      <h2 class="cfo-h2">Frequently asked questions</h2>
+      <div style="margin-top:20px;">
+        <div class="cfo-faq-item"><button class="cfo-faq-q" type="button">Is this for beginner freelancers?</button><div class="cfo-faq-a">Yes. If you already have clients, this gives you the structure to avoid messy habits early.</div></div>
+        <div class="cfo-faq-item"><button class="cfo-faq-q" type="button">Will this work for social media managers specifically?</button><div class="cfo-faq-a">Yes. The templates are built around social media workflows, reporting cycles, approvals, and renewals.</div></div>
+        <div class="cfo-faq-item"><button class="cfo-faq-q" type="button">Can I use this with my current workflow?</button><div class="cfo-faq-a">Yes. You can plug it into your existing process and adopt one part at a time.</div></div>
+        <div class="cfo-faq-item"><button class="cfo-faq-q" type="button">Is this a course or a template system?</button><div class="cfo-faq-a">It is a practical operating system and template pack. Less theory, more execution.</div></div>
+        <div class="cfo-faq-item"><button class="cfo-faq-q" type="button">How do I access it after payment?</button><div class="cfo-faq-a">You get instant digital access immediately after successful payment.</div></div>
+        <div class="cfo-faq-item"><button class="cfo-faq-q" type="button">Can I start using it immediately?</button><div class="cfo-faq-a">Yes. Most buyers can implement the first parts on the same day.</div></div>
+        <div class="cfo-faq-item"><button class="cfo-faq-q" type="button">Is this only for Nigerians?</button><div class="cfo-faq-a">No. ClientFlow OS works for service providers across markets.</div></div>
+        <div class="cfo-faq-item"><button class="cfo-faq-q" type="button">Will this help me price better and retain clients?</button><div class="cfo-faq-a">Yes. Better onboarding, reporting clarity, and renewal structure support better pricing and retention.</div></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cfo-section cfo-dark">
+    <div class="cfo-container" style="text-align:center;">
+      <h2 class="cfo-h2">You do not need more chaos. You need better systems.</h2>
+      <p class="cfo-p" style="max-width:790px;margin:16px auto 0;">ClientFlow OS helps you work better, price better, and keep clients longer. At ₦15,000, this is an easy decision for the right freelancer, social media manager, or client service operator.</p>
+      <div class="cfo-cta-row" style="justify-content:center;">
+        <a href="#cfo-checkout" class="cfo-btn cfo-btn-ghost">Start Using ClientFlow OS Today</a>
+        <div class="cfo-countdown" data-cfo-countdown><span class="cfo-countdot"></span><span>Current offer window ends in: <strong>20:00</strong></span></div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="cfo-section" style="padding-top:34px;padding-bottom:28px;background:#fff;">
+    <div class="cfo-container">
+      <p style="margin:0;font-size:16px;font-weight:800;color:#0f172a;">ClientFlow OS</p>
+      <p class="cfo-foot" style="margin:6px 0 0;">Support: hello@clientflowos.com<br>Secure checkout. Instant access after payment.</p>
+    </div>
+  </footer>
+
+  <div class="cfo-popup cfo-hide" id="cfoPurchasePopup" aria-live="polite">
+    <p class="cfo-popup-title">Recent purchase</p>
+    <p class="cfo-popup-copy" id="cfoPurchasePopupText">Loading...</p>
+  </div>
+
+  <div class="cfo-sticky">
+    <a href="#cfo-checkout" class="cfo-btn cfo-btn-primary">Get ClientFlow OS for ₦15,000</a>
+  </div>
+
+  <script>
+    (function() {
+      var countdownNodes = document.querySelectorAll('[data-cfo-countdown] strong');
+      var storageKey = 'cfo_offer_window_end';
+      var durationMs = 20 * 60 * 1000;
+
+      function getEndTime() {
+        var raw = window.localStorage.getItem(storageKey);
+        var now = Date.now();
+        var parsed = raw ? Number(raw) : NaN;
+        if (!raw || Number.isNaN(parsed) || parsed <= now) {
+          parsed = now + durationMs;
+          window.localStorage.setItem(storageKey, String(parsed));
+        }
+        return parsed;
+      }
+
+      function formatTime(msLeft) {
+        var total = Math.max(0, Math.floor(msLeft / 1000));
+        var mins = String(Math.floor(total / 60)).padStart(2, '0');
+        var secs = String(total % 60).padStart(2, '0');
+        return mins + ':' + secs;
+      }
+
+      var endTime = getEndTime();
+      function tick() {
+        var now = Date.now();
+        if (endTime <= now) {
+          endTime = now + durationMs;
+          window.localStorage.setItem(storageKey, String(endTime));
+        }
+        var formatted = formatTime(endTime - now);
+        countdownNodes.forEach(function(node) {
+          node.textContent = formatted;
+        });
+      }
+      tick();
+      window.setInterval(tick, 1000);
+
+      var faqButtons = document.querySelectorAll('.cfo-faq-q');
+      faqButtons.forEach(function(btn) {
+        btn.addEventListener('click', function() {
+          var parent = btn.parentElement;
+          var isOpen = parent.classList.contains('cfo-open');
+          document.querySelectorAll('.cfo-faq-item').forEach(function(item) {
+            item.classList.remove('cfo-open');
+          });
+          if (!isOpen) {
+            parent.classList.add('cfo-open');
+          }
+        });
+      });
+
+      /* DEMO_PURCHASES: Placeholder demo data for preview only.
+         Replace this array with real checkout events from your API/payment provider. */
+      var DEMO_PURCHASES = [
+        { name: 'Amaka', country: 'Nigeria', flag: '🇳🇬' },
+        { name: 'Tobi', country: 'Ghana', flag: '🇬🇭' },
+        { name: 'Sarah', country: 'Kenya', flag: '🇰🇪' },
+        { name: 'Mia', country: 'United Kingdom', flag: '🇬🇧' },
+        { name: 'David', country: 'South Africa', flag: '🇿🇦' }
+      ];
+
+      // TODO: Swap this with your real data source.
+      // Example integration point:
+      // fetch('/api/recent-purchases').then(r => r.json()).then(function(realPurchases){ ... })
+      var purchases = DEMO_PURCHASES;
+      var popup = document.getElementById('cfoPurchasePopup');
+      var popupText = document.getElementById('cfoPurchasePopupText');
+      var idx = 0;
+
+      function showPurchase(item) {
+        popupText.textContent = item.name + ' from ' + item.flag + ' ' + item.country + ' got ClientFlow OS.';
+        popup.classList.remove('cfo-hide');
+      }
+
+      function rotatePurchase() {
+        if (!purchases || !purchases.length) {
+          return;
+        }
+        popup.classList.add('cfo-hide');
+        window.setTimeout(function() {
+          showPurchase(purchases[idx]);
+          idx = (idx + 1) % purchases.length;
+        }, 260);
+      }
+
+      if (purchases.length) {
+        rotatePurchase();
+        window.setInterval(rotatePurchase, 5000);
+      }
+    })();
+  </script>
+</div>
